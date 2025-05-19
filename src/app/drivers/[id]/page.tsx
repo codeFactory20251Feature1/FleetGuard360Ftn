@@ -1,12 +1,12 @@
 
-// src/app/drivers/[id]/page.tsx
+import React from 'react'
 
-import React from 'react';
-
-export default function DriverPage({ params }: { params: { id: string } }) {
+const page = () => {
   return (
     <div>
-      <h1>Driver ID: {params.id}</h1>
+      aqui va un conductor
     </div>
-  );
+  )
 }
+
+export default page
