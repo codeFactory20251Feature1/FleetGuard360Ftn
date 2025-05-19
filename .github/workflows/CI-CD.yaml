@@ -12,12 +12,13 @@ env:
 jobs:
     Build:
         runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main'
         steps:
-            - name: install node.js 22.x
-              uses: actions/setup-node@v2
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: install node.js 22
+              uses: actions/setup-node@v3
               with:
-                 node-version: 22.x
+                 node-version: '22'
             - name: install dependencies
               run: yarn install
 
@@ -26,13 +27,13 @@ jobs:
     Deploy:
         needs: Build
         runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main'
         steps:
-            - uses: actions/checkout@v2
-            - name: install node.js 22.x
-              uses: actions/setup-node@v2
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: install node.js 22
+              uses: actions/setup-node@v3
               with:
-                 node-version: 22.x
+                 node-version: '22'
             - name: install vercel CLI
               run: yarn global add vercel
             - name: Pull vercel Environment variables
