@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 export default function EliminarConductor() {
-  const [foto, setFoto] = useState('/images/foto-conductor.jpg'); // Ruta en public/
+  const [foto] = useState('/images/foto-conductor.jpg'); // Ruta en public/
 
 
   return (
