@@ -109,7 +109,13 @@ export default function EditDriver() {
               <div className="flex flex-col items-center justify-center space-y-4">
                 <label className="text-sm font-medium text-gray-700">Foto del Conductor</label>
                 <div className="relative">
-                  <img src={photoPreview} alt="Foto" className="w-40 h-40 rounded-full object-cover border-4 border-gray-200 shadow-sm" />
+                  <Image 
+                  src={photoPreview} 
+                  alt="Foto" 
+                  className="rounded-full object-cover border-4 border-gray-200 shadow-sm"
+                  width={40}
+                  height={40}
+                  />
                   <button type="button" onClick={handlePhotoRemove} className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1">
                     <FaTimes size={10} />
                   </button>

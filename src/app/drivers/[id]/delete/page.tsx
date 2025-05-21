@@ -1,21 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function EliminarConductor() {
   const [foto, setFoto] = useState('/images/foto-conductor.jpg'); // Ruta en public/
 
-  const handleFotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setFoto(event.target?.result as string);
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
 
   return (
     <div className="bg-gray-100 min-h-screen">

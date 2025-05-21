@@ -5,6 +5,7 @@ import React, { JSX } from "react";
 import { Button } from "../components/button";
 import { Card, CardContent } from "../components/card";
 import { Input } from "../components/input";
+import Image from "next/image";
 
 
 const PaginaDeInicio = (): JSX.Element => {
@@ -48,11 +49,15 @@ const PaginaDeInicio = (): JSX.Element => {
             <div className="relative h-[1029px]">
               <div className="absolute w-[1439px] h-[959px] top-0 left-0 bg-[#fafbfe]" />
 
-              <img
-                className="absolute w-[1440px] h-[848px] top-28 left-0 object-cover"
-                alt="Background"
-                src="./background.png"
-              />
+              <Image
+  className="absolute top-28 left-0 object-cover"
+  alt="Background"
+  src="/background.png"
+  width={1440}
+  height={848}
+  priority
+/>
+
 
               <div className="absolute w-[1439px] h-[113px] top-0 left-0 bg-[#fafbfe]" />
 
@@ -61,17 +66,23 @@ const PaginaDeInicio = (): JSX.Element => {
                   FleetGuard360
                 </div>
 
-                <img
-                  className="w-[71px] h-[67px] top-[156px] left-[63px] absolute object-cover"
-                  alt="Logo"
-                  src="./image-1.png"
-                />
+                <Image
+  className="absolute top-[156px] left-[63px] object-cover"
+  alt="Logo"
+  src="/image-1.png"
+  width={71}
+  height={67}
+/>
 
-                <img
-                  className="w-[492px] h-[482px] top-[312px] left-[70px] absolute object-cover"
-                  alt="Main illustration"
-                  src="./image.png"
-                />
+<Image
+  className="absolute top-[156px] left-[63px] object-cover"
+  alt="Main illustration"
+  src="/image-1.png"
+  width={492}
+  height={482}
+/>
+
+
 
                 {cardItems.map((item) => (
                   <div
@@ -94,10 +105,12 @@ const PaginaDeInicio = (): JSX.Element => {
                             {item.title[0]}
                           </div>
                         )}
-                        <img
-                          className="w-[33px] h-[37px] top-[23px] left-[17px] absolute object-cover"
+                        <Image
+                          className="top-[23px] left-[17px] absolute object-cover"
                           alt={item.imageAlt}
                           src={item.imageSrc}
+                          width={33}
+                          height={37}
                         />
                       </CardContent>
                     </Card>
